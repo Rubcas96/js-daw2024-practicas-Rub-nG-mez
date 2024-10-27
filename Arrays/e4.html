@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E4</title>
+  </head>
+  <body>
+    <h1>Ejercicio 4</h1>
+    <div id="output"></div>
+
+    <script>
+      const numeros = [10, 20, 30, 40, 50, 60];
+
+      const [primerNumero, segundoNumero, ...resto] = numeros;
+
+      const output = document.getElementById('output');
+      output.innerHTML = `<strong>Primer número:</strong> ${primerNumero}<br>`;
+      output.innerHTML += `<strong>Segundo número:</strong> ${segundoNumero}<br>`;
+      output.innerHTML += `<strong>Resto del array:</strong> ${resto.join(
+        ', '
+      )}`;
+    </script>
+  </body>
+</html>

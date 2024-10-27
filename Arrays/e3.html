@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio de Datos</title>
+  </head>
+  <body>
+    <h1>Array de Datos</h1>
+    <div id="output"></div>
+
+    <script>
+      let data = [
+        { name: 'Nacho', telephone: '966112233', age: 40 },
+        { name: 'Ana', telephone: '911223344', age: 35 },
+        { name: 'Mario', phone: '611998877', age: 15 },
+        { name: 'Laura', telephone: '633663366', age: 17 },
+      ];
+
+      data.push(
+        { name: 'Pedro', telephone: '611944444', age: 25 },
+        { name: 'Julia', phone: '633232323', age: 37 }
+      );
+
+      const output = document.getElementById('output');
+
+      output.innerHTML +=
+        '<strong>Array después de añadir elementos:</strong><br>' +
+        data.map((item) => item.name).join(', ') +
+        '<br><br>';
+
+      data.sort((a, b) => a.age - b.age);
+      output.innerHTML +=
+        '<strong>Array ordenado por edad:</strong><br>' +
+        data.map((item) => item.name).join(', ') +
+        '<br><br>';
+
+      data.sort((a, b) => a.name.localeCompare(b.name));
+      output.innerHTML +=
+        '<strong>Array ordenado por nombre:</strong><br>' +
+        data.map((item) => item.name).join(', ') +
+        '<br><br>';
+
+      const mayoresDe30 = data.filter((person) => person.age > 30);
+      output.innerHTML +=
+        '<strong>Personas mayores de 30 años:</strong><br>' +
+        mayoresDe30.map((item) => item.name).join(', ');
+    </script>
+  </body>
+</html>

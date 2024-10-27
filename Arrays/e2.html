@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E1</title>
+  </head>
+  <body>
+    <h1>Array de Letras</h1>
+    <div id="output"></div>
+
+    <script>
+      let letras = [];
+
+      letras.unshift('A', 'B', 'C');
+      letras.push('D', 'E');
+
+      letras.shift();
+      letras.pop();
+
+      const output = document.getElementById('output');
+      output.innerHTML =
+        '<strong>Array final:</strong><br>' + letras.join(', ');
+    </script>
+  </body>
+</html>

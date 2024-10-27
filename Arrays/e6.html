@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E6</title>
+  </head>
+  <body>
+    <h1>Ejercicio 6</h1>
+    <div id="output"></div>
+
+    <script>
+      const personas = new Map();
+
+      personas.set('Carlos', 28);
+      personas.set('Ana', 34);
+      personas.set('Luis', 22);
+      personas.set('Marta', 30);
+
+      personas.set('Ana', 35);
+
+      const output = document.getElementById('output');
+      output.innerHTML = '<strong>Nombres y edades:</strong><br>';
+      personas.forEach((edad, nombre) => {
+        output.innerHTML += `${nombre}: ${edad} años<br>`;
+      });
+    </script>
+  </body>
+</html>

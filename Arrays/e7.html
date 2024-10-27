@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E7</title>
+  </head>
+  <body>
+    <h1>Ejercicio 7</h1>
+    <div id="output"></div>
+
+    <script>
+      function generarCombinacion() {
+        const combinacion = new Set();
+        while (combinacion.size < 6) {
+          const numero = Math.floor(Math.random() * 49) + 1;
+          combinacion.add(numero);
+        }
+        return Array.from(combinacion).sort((a, b) => a - b);
+      }
+
+      const combinaciones = [];
+      for (let i = 0; i < 50; i++) {
+        combinaciones.push(generarCombinacion());
+      }
+
+      console.log('Combinaciones aleatorias de la lotería:');
+      combinaciones.forEach((comb) => {
+        console.log(comb.join(', '));
+      });
+    </script>
+  </body>
+</html>
